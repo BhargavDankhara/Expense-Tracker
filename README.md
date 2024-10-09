@@ -24,10 +24,10 @@ The Expense Tracker is a feature-rich web application designed to help users man
 - **Data Visualization**: Chart.js or any other charting library
 
 ## .evv
-MONGO_URI=mongodb://<username>:<password>@localhost:27017/expense-tracker
-JWT_SECRET=your_jwt_secret
-PORT=5000
-NODE_ENV=development
+- MONGO_URI=mongodb://<username>:<password>@localhost:27017/expense-tracker
+- JWT_SECRET=your_jwt_secret
+- PORT=5000
+- NODE_ENV=development
 
 
 ### Prerequisites
