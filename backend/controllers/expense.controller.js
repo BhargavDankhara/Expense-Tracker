@@ -9,9 +9,9 @@ const upload = multer({ dest: "uploads/" });
 // Create Expense
 export const createExpense = async (req, res) => {
   try {
-    const { amount, category, date, paymentMethod } = req.body;
+    const { title, amount, category, date, paymentMethod } = req.body;
 
-    if (!amount || !category || !date || !paymentMethod) {
+    if ((!title, !amount || !category || !date || !paymentMethod)) {
       return res
         .status(400)
         .json({ success: false, message: "All fields are required" });
@@ -19,6 +19,7 @@ export const createExpense = async (req, res) => {
 
     const expense = new Expense({
       user: req.user._id,
+      title,
       amount,
       category,
       date,
@@ -43,6 +44,7 @@ export const uploadExpensesFromCSV = async (req, res) => {
       .on("data", (row) => {
         expenses.push({
           user: req.user._id,
+          title: row.title,
           amount: row.amount,
           category: row.category,
           date: new Date(row.date),

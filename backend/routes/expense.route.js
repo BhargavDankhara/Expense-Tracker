@@ -21,7 +21,7 @@ const upload = multer({ dest: "uploads/" });
 router.use(protectRoute); // Protect all routes with authentication
 
 router.post("/createxp", createExpense);
-router.post("/upload", upload.single("file"), uploadExpensesFromCSV);
+router.post("/uploadcsv", upload.single("file"), uploadExpensesFromCSV);
 router.get("/get", cacheMiddleware, getExpenses); // Use caching middleware
 router.patch("/update/:id", updateExpense);
 router.delete("/delete/:id", deleteExpense);
